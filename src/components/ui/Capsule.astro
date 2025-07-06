@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 import { getLanguage } from "../../utils/languages";
 
 interface Props {
@@ -13,35 +12,26 @@ const { size = "md", lang, linkEnabled = true } = Astro.props as Props;
 const baseClasses = {
   container: [
     "flex items-center w-fit",
-    "pl-2 pr-2 py-0.5 gap-1",
-    "text-sm font-semibold leading-3",
-    "bg-white shadow rounded-full",
-    "transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:text-white",
-    "max-sm:pl-1 max-sm:pr-1.5 max-sm:text-xs max-sm:gap-0.5",
-  ].join(" "),
-  iconContainer: [
-    "flex items-center justify-center",
-    "aspect-square",
-    "bg-black rounded-full p-1",
+    "px-3 py-1.5 gap-2",
+    "text-sm font-medium",
+    "bg-white shadow-sm rounded-full",
+    "border border-gray-100",
+    "transition-all duration-200 ease-in-out hover:bg-gray-800 hover:text-white",
+    "max-sm:px-2 max-sm:py-1 max-sm:text-xs",
   ].join(" "),
 };
 
 const sizeClasses = {
-  xs: "size-5",
-  md: "size-7",
+  xs: "text-xs",
+  md: "text-sm",
 };
 
-const selectedLanguage = getLanguage(lang);
+// Extract emoji and clean name
+const emoji = lang.match(/\p{Emoji}/u)?.[0] || '';
+const cleanName = lang.replace(emoji, '').trim();
 
 const getContainerClasses = () => {
-  const textSize = selectedLanguage.name.length > 10 ? "text-sm" : "text-base";
-  return `${baseClasses.container} ${textSize}`;
-};
-
-const getIconContainerClasses = () => {
-  return `${baseClasses.iconContainer} ${sizeClasses[size]} max-lg:size-6 max-sm:size-5 ${
-    selectedLanguage.className ? selectedLanguage.className : ""
-  }`;
+  return `${baseClasses.container} ${sizeClasses[size]}`;
 };
 ---
 
@@ -49,39 +39,26 @@ const getIconContainerClasses = () => {
   linkEnabled ? (
     <a
       class="cursor-pointer"
-      href={`/blog/techs/${lang}`}
-      aria-label={`View articles about ${selectedLanguage.name}`}
-      role="link"
+      href={`/services/${cleanName.toLowerCase().replace(/\s+/g, '-')}`}
+      aria-label={`View ${cleanName} service`}
     >
-      <span
-        class={getContainerClasses()}
-        role="presentation"
-        aria-hidden="true"
-      >
-        <div
-          class={getIconContainerClasses()}
-          role="img"
-          aria-label={`${selectedLanguage.name} icon`}
-        >
-          <Icon class="w-full!" name={selectedLanguage.iconName} />
-        </div>
-        {selectedLanguage.name}
+      <span class={getContainerClasses()}>
+        {emoji && (
+          <span class="mr-1" role="img" aria-hidden="true">
+            {emoji}
+          </span>
+        )}
+        {cleanName}
       </span>
     </a>
   ) : (
-    <span
-      class={`${getContainerClasses()} cursor-default`}
-      role="presentation"
-      aria-hidden="true"
-    >
-      <div
-        class={getIconContainerClasses()}
-        role="img"
-        aria-label={`${selectedLanguage.name} icon`}
-      >
-        <Icon class="w-full!" name={selectedLanguage.iconName} />
-      </div>
-      {selectedLanguage.name}
+    <span class={`${getContainerClasses()} cursor-default`}>
+      {emoji && (
+        <span class="mr-1" role="img" aria-hidden="true">
+          {emoji}
+        </span>
+      )}
+      {cleanName}
     </span>
   )
 }
