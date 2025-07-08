@@ -132,8 +132,7 @@ const buttonClasses = `${baseClasses} ${variantClasses[variant]}`;
 const buttonAriaLabel = ariaLabel || (iconName ? `${text} ${iconName}` : text);
 
 // Determine if it's an external link
-const isExternalLink = isExternal || link.startsWith('http');
-
+const isExternalLink = isExternal || (link && link.startsWith('http'));
 // Additional attributes for external links
 const externalAttributes = isExternalLink ? {
     target: '_blank',
