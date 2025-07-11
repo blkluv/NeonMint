@@ -1,14 +1,27 @@
 ---
 layout: /src/layouts/MarkdownAbout.astro
 title: "JERSEY CLUB IO | Content Creator Blockchain Game 🚀| How To Play"
-description: "Native New Jersey the Wizard of Hahz an O.G content creator turn blockchain thought leader returns to his home garden state to plant the seeds of the new digital economy around the world. 🚀☕"
+description: "Native New Jersey the Wizard of Hahz an O.G content creator turned blockchain thought leader returns to his home garden state to plant the seeds of the new digital economy around the world. 🚀☕"
 author: "The Wizard of Hahz"
 image:
   url: "/images/efeeleprofile.jpg"
   alt: "Jersey Club Logo"
 ---
 
-The game is to onboard the state of New Jersey on to blockchain with pics and videos that content creators can sell to barter for rentals, food or services around New Jersey among our verified vendors who accept $JERSEY loyalty rewards that can be redeemed for JerseyClub.io marketing campaigns paid with $JERSEY credits earn from social media posting or $JERSEY loyalty rewards earned by shopping in New Jersey.
+#### **🎮 Gameplay Overview** 🎪  
+This game incentivizes content creators 📸 to capture and monetize Jersey experiences 🌉 through photos/videos, which can be:
+
+    🔄 Traded for rentals 🏠, food 🍔, or services 🛍️ with verified local vendors
+
+    💳 Redeemed as $JERSEY loyalty rewards 🏆 at participating businesses
+
+✨ Why Play?
+
+💰 Creators earn from their content
+
+🤝 Businesses gain loyal customers
+
+🔗 NJ shines as a blockchain hub 
 
 #### **LEVEL 1: Jersey Club Viralfest** 🎪  
 *(Budget: $250K | Projected Reach: 500M+ Impressions)*  
@@ -16,9 +29,9 @@ The game is to onboard the state of New Jersey on to blockchain with pics and vi
 **Mission:** Make Atlantic City the Gen-Z capital of viral tourism!  
 
 **Gameplay:**  
-- 🎯 3-Day Event @ Ocean Casino  
-- 🎯 3 "Jersey Clubs" (content creator teams) compete in real-time challenges  
-- 🎯 Iconic AC locations using #What3Words (e.g., ///keep.it.simple)  
+🎯 3-Day Event @ Ocean Casino  
+🎯 3 "Jersey Clubs" (content creator teams) compete in real-time challenges  
+🎯 Iconic AC locations using #What3Words (e.g., ///keep.it.simple)  
 
 **Challenges:**  
 1. "Best Tony Luke's Cheesesteak Reaction" 🥪  
@@ -28,13 +41,13 @@ The game is to onboard the state of New Jersey on to blockchain with pics and vi
 **Prize:** Most viral content in 3 hours wins!  
 
 **Why It Works:**  
-- 👉 Gen-Z Tsunami: 500M+ impressions from top creators  
-- 👉 Authenticity > Ads: Unfiltered AC experiences  
-- 👉 #GoViralInNJFirst: Daily $JERSEY token treasure hunts  
+👉 Gen-Z Tsunami: 500M+ impressions from top creators  
+👉 Authenticity > Ads: Unfiltered AC experiences  
+👉 #GoViralInNJFirst: Daily $JERSEY token treasure hunts  
 
 **NJ Impact:**  
-- 🏖️ 15% increase in Gen-Z visitors ($42M+ local spending)  
-- 📱 Challenges become eternal tourist attractions  
+🏖️ 15% increase in Gen-Z visitors ($42M+ local spending)  
+📱 Challenges become eternal tourist attractions  
 
 ---
 
@@ -44,18 +57,18 @@ The game is to onboard the state of New Jersey on to blockchain with pics and vi
 **Mission:** Turn 3.7M NJ property deeds into blockchain-secured assets  
 
 **Gameplay:**  
-- ✅ Tokenize 370,000 deeds on Bitcoin blockchain ($1.50/deed)  
-- ✅ 5-Year Partnership with Bergen County  
+✅ Tokenize 370,000 deeds on Bitcoin blockchain ($1.50/deed)  
+✅ 5-Year Partnership with Bergen County  
 
 **Why It Works:**  
-- 🛡️ 90% reduction in deed fraud ($100M+ annual savings)  
-- ⚡ Processing time: weeks → hours  
-- 💡 Recovered $1M+ missing municipal funds  
+🛡️ 90% reduction in deed fraud ($100M+ annual savings)  
+⚡ Processing time: weeks → hours  
+💡 Recovered $1M+ missing municipal funds  
 
 **NJ Impact:**  
-- 👷 200+ blockchain jobs created  
-- 📉 Deters property scams & title theft  
-- 🏠 $290B real estate value tokenized  
+👷 200+ blockchain jobs created  
+📉 Deters property scams & title theft  
+🏠 $290B real estate value tokenized  
 
 ---
 
@@ -65,9 +78,9 @@ The game is to onboard the state of New Jersey on to blockchain with pics and vi
 **Mission:** Build America's #1 blockchain-friendly tourism economy  
 
 **Gameplay:**  
-- 🛍️ D-Commerce Shop (NFTs for local businesses)  
-- 📱 Free Bitcoin POS App (pos.jerseyclub.io)  
-- 🎓 "Jersey Club Biz 101" Course (100K $JERSEY rewards)  
+🛍️ D-Commerce Shop (NFTs for local businesses)  
+📱 Free Bitcoin POS App (pos.jerseyclub.io)  
+🎓 "Jersey Club Biz 101" Course (100K $JERSEY rewards)  
 
 **Rewards:**  
 - Businesses use $JERSEY for:  
@@ -76,9 +89,9 @@ The game is to onboard the state of New Jersey on to blockchain with pics and vi
 - Residents earn Bitcoin L$VE  
 
 **NJ Impact:**  
-- 🎓 5,000+ blockchain-trained by 2026  
-- 💸 New crypto tourism revenue streams  
-- 📈 Positions NJ as blockchain innovation leader  
+🎓 5,000+ blockchain-trained by 2026  
+💸 New crypto tourism revenue streams  
+📈 Positions NJ as blockchain innovation leader  
 
 ---
 
