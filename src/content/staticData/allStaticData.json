@@ -1,8 +1,8 @@
 {
   "profileImage": "/images/efeeleprofile.jpg",
   "profileAlt": "New Jersey Social Media Content Creator Game",
-  "profileLink": "https://app.jerseyclub.io",
-  "profileApp": "/about-me",
+  "profileLink": "/about-me",
+  "profileApp": "https://app.jerseyclub.io",
   "profileTitle": "Jersey Club IO",
   "profileName": "JERSEY CLUB",
   "github": "https://github.com/EFEELE/NeonMint",
