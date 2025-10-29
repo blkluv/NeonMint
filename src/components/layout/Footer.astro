@@ -20,32 +20,45 @@ const {
 ---
 
 <footer
-  class="relative bottom-0 w-full px-4 py-8 font-medium text-blacktext dark:bg-transparent dark:border-b-2 dark:border-zinc-800 dark:text-zinc-300 max-lg:mt-3"
+  class="relative bottom-0 w-full px-4 py-8 font-medium text-blacktext dark:bg-transparent dark:border-t dark:border-zinc-800 dark:text-zinc-300 max-lg:mt-3"
   role="contentinfo"
   aria-label="Site footer"
 >
   <nav
-    class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 text-xl max-xl:px-6 max-sm:flex-col"
+    class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-6 text-xl max-xl:px-6 max-sm:flex-col"
     aria-label="Footer navigation"
   >
-    <div
-      class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1 hover:text-mint-500 transition-all [text-shadow:0_1px_2px_#000]"
+    <!-- ✅ Text Logo -->
+    <a
+      href="/"
+      aria-label="Return to homepage"
+      class="flex flex-col items-center sm:items-start leading-tight group"
     >
-      <a href="/" aria-label="Return to homepage">
-        <!-- This icon represents the logo -->
-        <Icon name="logo" aria-hidden="true" />
-      </a>
-    </div>
-    <div class="text-center">
+      <span
+        class="text-2xl font-black bg-gradient-to-r from-riptide-400 to-mint-400 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_12px_#5fffc9]"
+      >
+        BLKLUV.ORG
+      </span>
+      <span
+        class="text-xs font-semibold tracking-widest text-mint-400 opacity-80 group-hover:opacity-100 transition-all"
+      >
+        powered by HAHZ.LIVE
+      </span>
+    </a>
+
+    <!-- ✅ Developer Credit -->
+    <div class="text-center text-base italic max-sm:mt-4">
       <a
         href={github}
-        class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
+        class="flex items-center justify-center gap-2 font-normal hover:text-mint-400 transition-colors"
         aria-label="About the website development"
-        ><Icon name="code" aria-hidden="true" /> Developed by <strong
-          >{alias}</strong
-        >, with Astro</a
       >
+        <Icon name="code" aria-hidden="true" class="text-mint-400" />
+        Developed by <strong>{alias}</strong>, manifested with ❤️‍🔥 love.
+      </a>
     </div>
+
+    <!-- ✅ Social Icons -->
     <div
       class="flex items-center justify-center gap-5"
       role="group"

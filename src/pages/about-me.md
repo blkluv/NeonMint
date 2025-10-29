@@ -4,7 +4,7 @@ title: "Fernando López | My Journey in Technology and Web Development 🚀| EFE
 description: "Web developer, technology enthusiast, and event organizer. From my beginnings in development to creating communities and impactful projects, here I share my journey, experiences, and learnings. 🚀☕"
 author: "Fernando Lopez"
 image:
-  url: "/images/efeeleprofile.webp"
+  url: "/images/efeeleprofile.jpg"
   alt: "Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
 ---
 
@@ -75,7 +75,7 @@ I have tried to teach them this in the way I would have liked to learn it at the
 
 ### Educational Content on YouTube 📹
 
-Many of them were especially interested in frontend and wanted to better understand and master CSS. Therefore, I started creating small videos that I uploaded to my <a href="https://www.youtube.com/@efeeledev" target="_blank" rel="noopener noreferrer">YouTube channel</a> privately so they could consult them when needed.
+Many of them were especially interested in frontend and wanted to better understand and master CSS. Therefore, I started creating small videos that I uploaded to my <a href="https://www.youtube.com/@luvnft" target="_blank" rel="noopener noreferrer">YouTube channel</a> privately so they could consult them when needed.
 
 In 2024, I recorded some <a href="https://www.frontendmentor.io/" target="_blank" rel="noopener noreferrer">FrontEndMentor</a> challenges with better quality and published them on my channel. Currently, I share these resources with people I know who are interested in the topic and want to learn by watching how it's put into practice.
 

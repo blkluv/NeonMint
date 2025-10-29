@@ -224,8 +224,8 @@ The site is configured for deployment on Vercel, but can be deployed to any stat
 A huge thanks to all the amazing people who have contributed to this project!  
 Your time, effort, and ideas make this repository better every day. 💚  
 
-<a href="https://github.com/EFEELE/NeonMint/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=EFEELE/NeonMint" />
+<a href="https://github.com/blkluv">
+  <img src="https://github.com/blkluv" />
 </a>
 
 ## 📄 License

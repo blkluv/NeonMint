@@ -8,8 +8,6 @@ const {
   contactSectionTitle,
   contactSectionSubtitle,
   contactSectionButtonText,
-  email,
-  contactSectionButtonIcon,
 } = staticData.data;
 ---
 
@@ -33,12 +31,14 @@ const {
         >
           <Button
             variant="big"
-            link={`mailto:${email}`}
-            text={contactSectionButtonText}
-            iconName={contactSectionButtonIcon}
+            link="https://t.me/hahznft"
+            text="Message on Telegram"
+            iconName="mdi:telegram"
+            isExternal={true}
           />
         </div>
       </div>
     </div>
   </div>
 </section>
+

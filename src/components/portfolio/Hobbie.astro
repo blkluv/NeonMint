@@ -1,9 +1,36 @@
 ---
 const { tag } = Astro.props;
+
+// Map hobbies to URLs
+const hobbyLinks: Record<string, string> = {
+  L$VE: "https://uniscan.cc/brc20/L%24VE",
+  $RNT: "https://uniscan.cc/brc20/%24RNT",
+  HAI$: "https://uniscan.cc/brc20/HAI%24",
+  MU$IK: "https://uniscan.cc/brc20/MU%24IK",
+  $CBO: "https://uniscan.cc/brc20/%24CBO",
+  $MILE: "https://uniscan.cc/brc20/%24MILE",
+  TRVL$: "https://uniscan.cc/brc20/TRVL%24",
+  "Board Games": "https://boardgamegeek.com/",
+};
+
+// Check if this hobby has a link
+const href = hobbyLinks[tag] || null;
 ---
 
-<span
+{href ? (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="px-4 py-1 rounded-full text-sm font-medium text-zinc-700 dark:text-mint-100 bg-white dark:bg-zinc-800 border border-mint-300 hover:bg-mint-100 hover:scale-110 hover:shadow-[0_0_10px_rgba(13,188,130,0.4)] transition-all ease-in-out duration-300"
+    aria-label={`Open ${tag} link`}
+  >
+    {tag}
+  </a>
+) : (
+  <span
     class="px-4 py-1 rounded-full text-sm font-medium text-zinc-500 dark:text-neutral-400 hover:text-blacktext bg-riptide-50 dark:bg-zinc-800 hover:bg-mint-200 cursor-default transition-all ease-in-out duration-300"
->
-{tag}
-</span>
+  >
+    {tag}
+  </span>
+)}

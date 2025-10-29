@@ -1,43 +1,33 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'NeonMint'
+title: 'HAHZ.LIVE'
 pubDate: 2025-04-05
-description: 'NeonMint is a modern, minimalist template crafted for developers and digital creatives.'
-languages: ["astro", "tailwind", "cloudflare", "javascript","vercel"]
+description: 'Subscribe to HAHZ.LIVE to get tokenized and hear about solutions daily.'
+languages: []
 image:
-  url: "/images/projects/neonmint.webp"
+  url: "/images/projects/neonmint.jpg"
   alt: "Thumbnail of Astro arches."
 --- 
 
-**NeonMint** is a modern, minimalist web template created for developers, designers, and digital creatives. This project aims to offer an elegant and functional visual experience, combining a dark-toned aesthetic with mint green accents to highlight content without distractions.
-
-Developed with **Astro** and styled with **TailwindCSS**, NeonMint focuses on speed, modularity, and a component-centered architecture.
+**Subscribe** to HAHZ.LIVE to get tokenized to start your Web5 tribe called quest and hear about solutions daily.
 
 ## 🧩 Features
 
-- Responsive and minimalist design
-- Dark mode aesthetic with mint green accents
-- Clean and reusable UI components
-- Ideal for portfolios, dashboards or tech landing pages
-- Modern typography and clear visual hierarchy
-- Developed with **Astro**
-- Styled with **TailwindCSS**
+- Spiritual guidance
+- Mastermind group access
+- First to learn about tokenized purpose based projects to invest early
+- Upgrade your business 
+- Access free tech and learning course worth more than a D1 Ivey league school
+- Find your spiritual **purpose**
+- Earn and **Learn**
 
-## 💡 Technologies used
+## 🌐 WEB5
 
-- Astro
-- TailwindCSS
-- HTML5
-- JavaScript
-
-
-## 🌐 Demo
-
-👉 [View live demo](https://github.com/EFEELE/NeonMint) 
+👉 [View live](https://hahz.live) 
 
 ## 🎯 Objective
 
-The purpose of NeonMint is to combine style and functionality in a clean interface that enhances content without overwhelming the user. It's an exercise in design and development focused on visual detail and user experience.
+Teach the new generation on-chain how the purpose economy works best for their block industry.
 
 
-🚀 *Developed by EFEELE.*
+🚀 *Developed by Wizard of HAHZ.*
