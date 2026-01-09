@@ -26,10 +26,10 @@ const allTools = [
   },
 ];
 
-const baseClasses = "flex flex-wrap gap-4 max-lg:gap-1";
+const baseClasses = "flex flex-wrap gap-3";
 const variantClasses: Record<ToolVariant, string> = {
-  default: "cursor-default",
-  center: "justify-center cursor-default",
+  default: "justify-start",
+  center: "justify-center",
 };
 
 const {
@@ -41,19 +41,26 @@ const {
 const classes = `${baseClasses} ${variantClasses[variant]}`;
 ---
 
-<div class={classes}>
-  {allTools.map((tool) => (
-    <a
-      href={tool.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={tool.name}
-    >
-      <Capsule
-        lang={tool.name}
-        linkEnabled={linkEnabled}
-        size={size}
-      />
-    </a>
-  ))}
-</div>
+<section class="rounded-xl border border-mint-500/30 bg-gradient-to-b from-mint-900/40 to-black/40 p-6">
+  <h3 class="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+    🎵 TikTok Channels
+  </h3>
+
+  <div class={classes}>
+    {allTools.map((tool) => (
+      <a
+        href={tool.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={tool.name}
+        class="hover:scale-105 transition-transform"
+      >
+        <Capsule
+          lang={tool.name}
+          linkEnabled={linkEnabled}
+          size={size}
+        />
+      </a>
+    ))}
+  </div>
+</section>
