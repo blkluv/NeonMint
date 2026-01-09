@@ -3,33 +3,42 @@ import Capsule from "../ui/Capsule.astro";
 
 type ToolVariant = "default" | "center";
 
-// Define your TikTok channels with their URLs
 const allTools = [
-  { name: "🧁 Nothing Bundt Cakes 📍Camp Creek", link: "https://www.tiktok.com/t/ZTHEnXdvbfQT8-80WiK/"},
-  { name: "🍗 Wingstop 📍Camp Creek", link: "https://www.tiktok.com/t/ZTHEn4YmdWwGL-hLBsN/" },
-  { name: "@deliv3ry", link: "https://www.tiktok.com/@deliv3ry" },
-  { name: "@rntbnb", link: "https://www.tiktok.com/@rntbnb" },
-  { name: "@twerksocial", link: "https://www.tiktok.com/@twerksocial" },
-  { name: "@manifestppv", link: "https://www.tiktok.com/@manifestppv" },
-  { name: "@rfptok", link: "https://www.tiktok.com/@rfptok" },
-  { name: "@rwatok", link: "https://www.tiktok.com/@rwatok" },
-  { name: "@yenobet", link: "https://www.tiktok.com/@yenobet" },
-  { name: "@foodcoins", link: "https://www.tiktok.com/@foodcoins" },
-  { name: "@ugcreviews", link: "https://www.tiktok.com/@ugcreviews" },
-  { name: "@lumeebooth", link: "https://www.tiktok.com/@lumeebooth" },
-  { name: "@aipromptok", link: "https://www.tiktok.com/@aipromptok" },
-  { name: "@smilesats", link: "https://www.tiktok.com/@smilesats" },
+  {
+    name: "🧁 Nothing Bundt Cakes 📍Camp Creek",
+    link: "https://www.tiktok.com/t/ZTHEnXdvbfQT8-80WiK",
+  },
+  {
+    name: "🍗 Wingstop 📍Camp Creek",
+    link: "https://www.tiktok.com/t/ZTHEn4YmdWwGL-hLBsN",
+  },
+  {
+    name: "🍤 Milk & Honey 📍 Cascade",
+    link: "https://www.tiktok.com/t/ZTHEnVFS2V92p-iNiX5",
+  },
+  {
+    name: "🍳 Breakfast at Barney's 📍 Downtown Atlanta",
+    link: "https://www.tiktok.com/t/ZTHEnVSd1djmP-99ZBY",
+  },
+  {
+    name: "🗣️ Shawn Food Reviews",
+    link: "https://www.tiktok.com/t/ZTHEnV4sDfpD8-1wRPH",
+  },
 ];
 
-// Variant setup
-const baseClasses = "flex flex-wrap gap-4 max-lg:gap-1 grid-auto-efe";
+const baseClasses = "flex flex-wrap gap-4 max-lg:gap-1";
 const variantClasses: Record<ToolVariant, string> = {
   default: "cursor-default",
   center: "justify-center cursor-default",
 };
 
-const { variant = "default", linkEnabled = true, size = "md" } = Astro.props;
-const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
+const {
+  variant = "default",
+  linkEnabled = true,
+  size = "md",
+} = Astro.props;
+
+const classes = `${baseClasses} ${variantClasses[variant]}`;
 ---
 
 <div class={classes}>
@@ -38,9 +47,13 @@ const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
       href={tool.link}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Visit ${tool.name} TikTok channel`}
+      aria-label={tool.name}
     >
-      <Capsule lang={tool.name} linkEnabled={true} size={size} />
+      <Capsule
+        lang={tool.name}
+        linkEnabled={linkEnabled}
+        size={size}
+      />
     </a>
   ))}
 </div>
