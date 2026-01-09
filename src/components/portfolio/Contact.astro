@@ -1,5 +1,7 @@
+---
 import Heading from "../ui/Heading.astro";
 import Button from "../ui/Button.astro";
+import TikTokIcon from "../../icons/tiktok.svg";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
@@ -25,16 +27,18 @@ const {
             level={2}
           />
         </div>
+
         <div
-          class="transition-all duration-500 group-hover:animate-jump group-hover:animate-duration-[300ms] group-hover:animate-ease-in-out group-hover:scale-105 hover:scale-125"
+          class="transition-all duration-500 hover:scale-125"
         >
           <Button
             variant="big"
             link="https://tiktok.me/foodreelview"
-            text="Message on TikTok"
-            iconName="mdi:tiktok"
+            text={contactSectionButtonText}
             isExternal={true}
-          />
+          >
+            <TikTokIcon class="h-6 w-6" />
+          </Button>
         </div>
       </div>
     </div>
