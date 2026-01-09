@@ -8,7 +8,12 @@ interface Props {
 }
 
 const { size = "md", lang, linkEnabled = true } = Astro.props as Props;
+
+// Detect TikTok handles
 const isTikTok = lang.startsWith("@");
+
+// Detect custom labels (food, brands, emojis, locations)
+const isCustomLabel = /[\s📍🍔🍗🍳🍤🧁🗣️]/.test(lang);
 
 // ---------- Emoji Map ----------
 const emojiMap: Record<string, string> = {
@@ -27,7 +32,6 @@ const emojiMap: Record<string, string> = {
   "@aipromptok": "🤖",
   "@smilesats": "😁",
 
-  // food / misc fallbacks
   "Nothing Bundt Cakes": "🧁",
   "Wingstop": "🍗",
   "Milk & Honey": "🍤",
@@ -40,32 +44,33 @@ const emoji =
   "🎬";
 
 // ---------- Base Classes ----------
-const baseClasses = {
-  container: [
-    "flex items-center w-fit gap-1.5",
-    "px-3 py-1.5",
-    "text-sm font-semibold",
-    "bg-white dark:bg-zinc-800",
-    "text-zinc-800 dark:text-white",
-    "rounded-full border border-mint-400",
-    "transition-all duration-300 ease-in-out",
-    "hover:scale-110 hover:shadow-[0_0_20px_rgba(13,188,130,0.3)]",
-  ].join(" "),
-};
+const baseClasses = [
+  "flex items-center gap-2",
+  "px-3 py-1.5",
+  "rounded-full",
+  "bg-white dark:bg-zinc-800",
+  "text-zinc-800 dark:text-white",
+  "border border-mint-400",
+  "text-sm font-semibold",
+  "transition-all duration-300",
+  "hover:scale-110 hover:shadow-[0_0_20px_rgba(13,188,130,0.3)]",
+].join(" ");
 
 const sizeClasses = {
   xs: "text-xs px-2 py-1",
   md: "text-sm px-3 py-1.5",
 };
 
-// ---------- Language Fallback ----------
-let selectedLanguage: any = {};
-if (!isTikTok) {
-  selectedLanguage = getLanguage(lang);
+// ---------- Label Resolution ----------
+let label = lang;
+
+// ONLY use getLanguage for real tech keywords
+if (!isTikTok && !isCustomLabel) {
+  const tech = getLanguage(lang);
+  if (tech?.name) label = tech.name;
 }
 
-const label = isTikTok ? lang : selectedLanguage?.name || lang;
-const classes = `${baseClasses.container} ${sizeClasses[size]}`;
+const classes = `${baseClasses} ${sizeClasses[size]}`;
 ---
 
 {linkEnabled ? (
@@ -73,6 +78,8 @@ const classes = `${baseClasses.container} ${sizeClasses[size]}`;
     href={
       isTikTok
         ? `https://www.tiktok.com/${lang}`
+        : isCustomLabel
+        ? "#"
         : `/blog/techs/${lang}`
     }
     target={isTikTok ? "_blank" : undefined}
@@ -81,11 +88,11 @@ const classes = `${baseClasses.container} ${sizeClasses[size]}`;
     aria-label={label}
   >
     <span class="text-lg leading-none">{emoji}</span>
-    <span>{label}</span>
+    <span class="whitespace-nowrap">{label}</span>
   </a>
 ) : (
   <span class={`${classes} cursor-default`} aria-hidden="true">
     <span class="text-lg leading-none">{emoji}</span>
-    <span>{label}</span>
+    <span class="whitespace-nowrap">{label}</span>
   </span>
 )}
