@@ -13,7 +13,10 @@ const { size = "md", lang, linkEnabled = true } = Astro.props as Props;
 const isTikTok = lang.startsWith("@");
 
 // Detect custom labels (food, brands, emojis, locations)
-const isCustomLabel = /[\s📍🍔🍗🍳🍤🧁🗣️]/.test(lang);
+const isCustomLabel = /[\s📍]/.test(lang);
+
+// Detect if emoji already exists in label
+const hasEmoji = /\p{Extended_Pictographic}/u.test(lang);
 
 // ---------- Emoji Map ----------
 const emojiMap: Record<string, string> = {
@@ -36,36 +39,40 @@ const emojiMap: Record<string, string> = {
   "Wingstop": "🍗",
   "Milk & Honey": "🍤",
   "Breakfast at Barney's": "🍳",
+  "Shawn Food Reviews": "🎬",
 };
 
+// Only prepend emoji if label DOES NOT already contain one
 const emoji =
-  emojiMap[lang] ||
-  Object.entries(emojiMap).find(([key]) => lang.includes(key))?.[1] ||
-  "🎬";
+  hasEmoji
+    ? null
+    : emojiMap[lang] ||
+      Object.entries(emojiMap).find(([key]) => lang.includes(key))?.[1] ||
+      "🎬";
 
 // ---------- Base Classes ----------
 const baseClasses = [
   "flex items-center gap-2",
-  "px-3 py-1.5",
+  "px-4 py-2",
   "rounded-full",
-  "bg-white dark:bg-zinc-800",
-  "text-zinc-800 dark:text-white",
-  "border border-mint-400",
+  "bg-white/90 dark:bg-zinc-900/80",
+  "text-zinc-900 dark:text-white",
+  "border border-mint-400/60",
   "text-sm font-semibold",
   "transition-all duration-300",
-  "hover:scale-110 hover:shadow-[0_0_20px_rgba(13,188,130,0.3)]",
+  "hover:scale-105 hover:shadow-[0_0_20px_rgba(13,188,130,0.35)]",
 ].join(" ");
 
 const sizeClasses = {
-  xs: "text-xs px-2 py-1",
-  md: "text-sm px-3 py-1.5",
+  xs: "text-xs px-3 py-1.5",
+  md: "text-sm px-4 py-2",
 };
 
 // ---------- Label Resolution ----------
 let label = lang;
 
-// ONLY use getLanguage for real tech keywords
-if (!isTikTok && !isCustomLabel) {
+// ONLY use getLanguage for real tech keywords (no spaces, no emojis)
+if (!isTikTok && !isCustomLabel && !hasEmoji) {
   const tech = getLanguage(lang);
   if (tech?.name) label = tech.name;
 }
@@ -87,12 +94,12 @@ const classes = `${baseClasses} ${sizeClasses[size]}`;
     class={classes}
     aria-label={label}
   >
-    <span class="text-lg leading-none">{emoji}</span>
+    {emoji && <span class="text-lg leading-none">{emoji}</span>}
     <span class="whitespace-nowrap">{label}</span>
   </a>
 ) : (
   <span class={`${classes} cursor-default`} aria-hidden="true">
-    <span class="text-lg leading-none">{emoji}</span>
+    {emoji && <span class="text-lg leading-none">{emoji}</span>}
     <span class="whitespace-nowrap">{label}</span>
   </span>
 )}
