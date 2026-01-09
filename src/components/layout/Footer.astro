@@ -13,10 +13,9 @@ const discord =
   staticData.discord ??
   "https://discord.com/channels/1034757895268618260/role-subscriptions";
 
-// ✅ FIX: use valid astro-icon namespaced icons
-const emailIconName = "mdi:email";
-const tiktokIconName = "mdi:tiktok";
-const discordIconName = "mdi:discord";
+const emailIconName = "simple-icons:gmail";
+const tiktokIconName = "simple-icons:tiktok";
+const discordIconName = "simple-icons:discord";
 ---
 
 <footer
@@ -47,8 +46,8 @@ const discordIconName = "mdi:discord";
 
     <div class="text-center text-base italic max-sm:mt-4">
       <div class="flex items-center justify-center gap-2 font-normal">
-        <Icon name="mdi:sparkles" aria-hidden="true" class="text-mint-400" />
-        Built with 🫶 by <strong>{alias}</strong>
+        <Icon name="simple-icons:starship" aria-hidden="true" class="text-mint-400" />
+        Built with ❤️‍🔥 by <strong>{alias}</strong>
       </div>
     </div>
 
