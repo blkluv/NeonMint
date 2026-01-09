@@ -9,7 +9,7 @@ const collection = await getCollection("staticData");
 const data = collection?.[0]?.data ?? {};
 
 const tiktok = data.tiktok ?? "https://www.tiktok.com/@foodreelviews";
-const tiktokIconName = data.tiktokIconName ?? "tiktok";
+const tiktokIconName = "mdi:tiktok";
 
 const currentPath = Astro.url.pathname;
 const routes = ["/", "/portfolio", "/about-me"];
@@ -19,57 +19,36 @@ const navItems = isActiveRoute
   ? ["home", "work", "solutions"]
   : ["home", "blog", "about"];
 ---
-
 <header
   role="banner"
   aria-label="Main navigation"
   class="sticky top-0 z-50 w-full p-4 font-medium text-blacktext dark:text-zinc-300 dark:bg-[#0E0E11]/80 dark:border-b dark:border-zinc-800 bg-white/90 backdrop-blur-xs dark:backdrop-blur-xs max-md:z-50 max-md:px-0 transition-all"
 >
-  <div
-    class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6"
-  >
+  <div class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6">
     <a href="/" aria-label="Go to home" class="flex flex-col leading-tight group">
-      <span
-        class="text-2xl font-black bg-gradient-to-r from-riptide-400 to-mint-400 bg-clip-text text-transparent transition-all duration-300 group-hover:drop-shadow-[0_0_12px_#5fffc9]"
-      >
+      <span class="text-2xl font-black bg-gradient-to-r from-riptide-400 to-mint-400 bg-clip-text text-transparent">
         🍔 Food ReelView 🎙️
       </span>
-      <span
-        class="text-xs font-semibold tracking-widest text-mint-400 opacity-80 group-hover:opacity-100 transition-all"
-      >
+      <span class="text-xs font-semibold tracking-widest text-mint-400 opacity-80">
         TikTok Challenge
       </span>
     </a>
 
     <Navigation items={navItems} />
 
-    <div class="flex items-center justify-between gap-5 text-xl">
-      <div
-        class="max-md:hidden flex items-center justify-center gap-5"
-        role="group"
-      >
-        <Social
-          link={tiktok}
-          iconName={tiktokIconName}
-          class="hover:scale-110 transition-transform"
-        />
-      </div>
+    <div class="max-md:hidden flex items-center gap-5 text-xl">
+      <Social
+        link={tiktok}
+        iconName={tiktokIconName}
+        class="hover:scale-110 transition-transform"
+      />
     </div>
 
     <div class="flex items-center gap-5 text-xl md:pl-5">
       <ThemeIcon />
-      <button
-        class="hamburger"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <Icon name="bars" class="hamburger-icon bars-icon" aria-hidden="true" />
-        <Icon
-          name="xmark"
-          class="hamburger-icon xmark-icon"
-          aria-hidden="true"
-        />
+      <button class="hamburger" aria-label="Open menu">
+        <Icon name="bars" />
+        <Icon name="xmark" />
       </button>
     </div>
   </div>
