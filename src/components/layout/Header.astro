@@ -9,7 +9,9 @@ const collection = await getCollection("staticData");
 const data = collection?.[0]?.data ?? {};
 
 const tiktok = data.tiktok ?? "https://www.tiktok.com/@foodreelviews";
-const tiktokIconName = "mdi:tiktok";
+
+// Import your custom TikTok SVG
+import TikTokIcon from "../icons/tiktok.svg";
 
 const currentPath = Astro.url.pathname;
 const routes = ["/", "/portfolio", "/about-me"];
@@ -37,11 +39,15 @@ const navItems = isActiveRoute
     <Navigation items={navItems} />
 
     <div class="max-md:hidden flex items-center gap-5 text-xl">
-      <Social
-        link={tiktok}
-        iconName={tiktokIconName}
-        class="hover:scale-110 transition-transform"
-      />
+      <a
+        href={tiktok}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:scale-110 transition-transform text-current hover:text-mint-400"
+        aria-label="Visit TikTok"
+      >
+        <TikTokIcon class="w-6 h-6 fill-current" />
+      </a>
     </div>
 
     <div class="flex items-center gap-5 text-xl md:pl-5">
