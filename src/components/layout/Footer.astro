@@ -3,19 +3,20 @@ import Social from "../ui/Social.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
-// 🔒 SAFE content loading (prevents build crashes)
 const staticCollection = await getCollection("staticData");
 const staticData = staticCollection?.[0]?.data ?? {};
 
-const {
-  alias = "Food ReelView",
-  email = "trust@foodreelviews.com",
-  tiktok = "https://www.tiktok.com/@foodreelviews",
-  discord = "https://discord.com/channels/1034757895268618260/role-subscriptions",
-  emailIconName = "envelope",
-  tiktokIconName = "tiktok",
-  discordIconName = "discord",
-} = staticData;
+const alias = staticData.alias ?? "Food ReelView";
+const email = staticData.email ?? "trust@foodreelviews.com";
+const tiktok = staticData.tiktok ?? "https://www.tiktok.com/@foodreelviews";
+const discord =
+  staticData.discord ??
+  "https://discord.com/channels/1034757895268618260/role-subscriptions";
+
+// ✅ FIX: use valid astro-icon namespaced icons
+const emailIconName = "mdi:email";
+const tiktokIconName = "mdi:tiktok";
+const discordIconName = "mdi:discord";
 ---
 
 <footer
@@ -27,7 +28,6 @@ const {
     class="mx-auto flex max-w-7xl flex-row items-center justify-between gap-6 text-xl max-xl:px-6 max-sm:flex-col"
     aria-label="Footer navigation"
   >
-    <!-- ✅ Text Logo -->
     <a
       href="/"
       aria-label="Return to homepage"
@@ -45,15 +45,13 @@ const {
       </span>
     </a>
 
-    <!-- ✅ Developer / Brand Credit (NO GitHub link) -->
     <div class="text-center text-base italic max-sm:mt-4">
       <div class="flex items-center justify-center gap-2 font-normal">
-        <Icon name="sparkles" aria-hidden="true" class="text-mint-400" />
+        <Icon name="mdi:sparkles" aria-hidden="true" class="text-mint-400" />
         Built with ❤️‍🔥 by <strong>{alias}</strong>
       </div>
     </div>
 
-    <!-- ✅ Social Icons (Email • TikTok • Discord ONLY) -->
     <div
       class="flex items-center justify-center gap-5"
       role="group"
