@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "Film your TikTok Food ReelView at Atlanta's favorite breakfast spot for a chance to win free meals."
 languages: []
 image:
-  url: "public/images/imagedefault.jpg"
+  url: "/images/imagedefault.jpg"
   alt: "Breakfast at Barney's restaurant exterior with neon sign"
 ---
 
